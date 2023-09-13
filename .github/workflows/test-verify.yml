@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: npm ci
       - run: echo $CI
       - run: npx cypress verify
@@ -20,7 +20,7 @@ jobs:
       DEBUG:  'cypress:*'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: npm ci
       - run: echo $CI
       - run: npx cypress verify
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: npm ci
       - run: npx cypress cache clear
       - run: echo $CI
@@ -41,7 +41,7 @@ jobs:
       DEBUG:  'cypress:*'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - run: npm ci
       - run: npx cypress cache clear
       - run: echo $CI
