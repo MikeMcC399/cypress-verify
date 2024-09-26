@@ -1,20 +1,21 @@
-name: Test verify
+name: Test verify fail
 
 on:
   workflow_dispatch:
 
 jobs:
 
-  verify:
+  verify-fail:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - run: npm ci
+      - run: npx cypress cache clear
       - run: echo $CI
       - run: npx cypress verify
 
-  verify-debug:
+  verify-fail-debug:
     runs-on: ubuntu-24.04
     env:
       DEBUG:  'cypress:*'
@@ -22,5 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - run: npm ci
+      - run: npx cypress cache clear
       - run: echo $CI
       - run: npx cypress verify
