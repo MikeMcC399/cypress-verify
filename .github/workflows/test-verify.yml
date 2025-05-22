@@ -13,6 +13,7 @@ jobs:
       - run: npm ci
       - run: echo $CI
       - run: npx cypress verify
+      - run: npx cypress version
 
   verify-debug:
     runs-on: ubuntu-24.04
@@ -24,3 +25,4 @@ jobs:
       - run: npm ci
       - run: echo $CI
       - run: npx cypress verify
+      - run: npx cypress version
